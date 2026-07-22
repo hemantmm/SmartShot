@@ -1,0 +1,159 @@
+Script started on Wed Jul 22 15:24:26 2026
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hsscr   ccd scripts[1m/[0m[0m [?2004l
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air scripts % [K[?2004hiinstall.sh[?2004l
+zsh: command not found: install.sh
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air scripts % [K[?2004h[7m./install.sh[27m[12D[27m.[27m/[27mi[27mn[27ms[27mt[27ma[27ml[27ml[27m.[27ms[27mh[?2004l
+Installing SmartShot from: /Users/hemantmehta/Documents/Screenshot
+Using Python: Python 3.13.3
+Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (26.1.2)
+Obtaining file:///Users/hemantmehta/Documents/Screenshot
+  Installing build dependencies ... [?25l- \ | / done
+[?25h  Checking if build backend supports build_editable ... [?25ldone
+[?25h  Getting requirements to build editable ... [?25l- done
+[?25h  Preparing editable metadata (pyproject.toml) ... [?25l- done
+[?25hRequirement already satisfied: watchdog>=4.0.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (6.0.0)
+Requirement already satisfied: pyobjc-core>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Cocoa>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Quartz>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Vision>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-CoreML>=12.1 in ./.venv/lib/python3.13/site-packages (from pyobjc-framework-Vision>=10.0->smartshot==0.1.0) (12.1)
+Building wheels for collected packages: smartshot
+  Building editable for smartshot (pyproject.toml) ... [?25l- done
+[?25h  Created wheel for smartshot: filename=smartshot-0.1.0-0.editable-py3-none-any.whl size=5406 sha256=671e2c3ab05885df1829e414f14c8e4b4769dd732e0bc8cf4b1689a8519f141e
+  Stored in directory: /private/var/folders/y8/8qdxmn0916l63p0jqz06zw8h0000gn/T/pip-ephem-wheel-cache-v1_6iza7/wheels/52/91/56/d1e53f6f1f35ddc4df9a80037709751aa9792d852a93e29f21
+Successfully built smartshot
+Installing collected packages: smartshot
+  Attempting uninstall: smartshot
+    Found existing installation: smartshot 0.1.0
+    Uninstalling smartshot-0.1.0:
+      Successfully uninstalled smartshot-0.1.0
+Successfully installed smartshot-0.1.0
+
+SmartShot is installed.
+
+Start the app:
+  scripts/start-app.command
+
+Or run from Terminal:
+  .venv/bin/smartshot app
+
+To make SmartShot work automatically after login:
+  scripts/install-background.command
+
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air scripts % [K[?2004hccd ..[?2004l
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7mscripts/install.sh[27m[18D[27ms[27mc[27mr[27mi[27mp[27mt[27ms[27m/[27mi[27mn[27ms[27mt[27ma[27ml[27ml[27m.[27ms[27mh[?2004l
+Installing SmartShot from: /Users/hemantmehta/Documents/Screenshot
+Using Python: Python 3.13.3
+Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (26.1.2)
+Obtaining file:///Users/hemantmehta/Documents/Screenshot
+  Installing build dependencies ... [?25l- done
+[?25h  Checking if build backend supports build_editable ... [?25ldone
+[?25h  Getting requirements to build editable ... [?25l- done
+[?25h  Preparing editable metadata (pyproject.toml) ... [?25l- done
+[?25hRequirement already satisfied: watchdog>=4.0.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (6.0.0)
+Requirement already satisfied: pyobjc-core>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Cocoa>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Quartz>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Vision>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-CoreML>=12.1 in ./.venv/lib/python3.13/site-packages (from pyobjc-framework-Vision>=10.0->smartshot==0.1.0) (12.1)
+Building wheels for collected packages: smartshot
+  Building editable for smartshot (pyproject.toml) ... [?25l- done
+[?25h  Created wheel for smartshot: filename=smartshot-0.1.0-0.editable-py3-none-any.whl size=5406 sha256=a4f7b86c5c0b424f029e2c94a1e976ca2aea2ec431fc35822c741f61b07755a8
+  Stored in directory: /private/var/folders/y8/8qdxmn0916l63p0jqz06zw8h0000gn/T/pip-ephem-wheel-cache-nzcv6f2n/wheels/52/91/56/d1e53f6f1f35ddc4df9a80037709751aa9792d852a93e29f21
+Successfully built smartshot
+Installing collected packages: smartshot
+  Attempting uninstall: smartshot
+    Found existing installation: smartshot 0.1.0
+    Uninstalling smartshot-0.1.0:
+      Successfully uninstalled smartshot-0.1.0
+Successfully installed smartshot-0.1.0
+
+SmartShot is installed.
+
+Start the app:
+  scripts/start-app.command
+
+Or run from Terminal:
+  .venv/bin/smartshot app
+
+To make SmartShot work automatically after login:
+  scripts/install-background.command
+
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hcclear[?2004l
+[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7mscripts/start-app.command[27m[25D[27ms[27mc[27mr[27mi[27mp[27mt[27ms[27m/[27ms[27mt[27ma[27mr[27mt[27m-[27ma[27mp[27mp[27m.[27mc[27mo[27mm[27mm[27ma[27mn[27md[?2004l
+SmartShot's desktop app requires Python Tk support. Install a Python build that includes tkinter, or use the CLI commands such as 'smartshot watch --dir ~/Desktop'.
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7mscripts/install-background.command[27m[34D[27ms[27mc[27mr[27mi[27mp[27mt[27ms[27m/[27mi[27mn[27ms[27mt[27ma[27ml[27ml[27m-[27mb[27ma[27mc[27mk[27mg[27mr[27mo[27mu[27mn[27md[27m.[27mc[27mo[27mm[27mm[27ma[27mn[27md[?2004l
+Installed + loaded LaunchAgent: /Users/hemantmehta/Library/LaunchAgents/com.smartshot.watch.plist
+Logs: /tmp/smartshot.out.log /tmp/smartshot.err.log
+Installed: True
+Loaded: True
+Plist: /Users/hemantmehta/Library/LaunchAgents/com.smartshot.watch.plist
+
+SmartShot will now run in the background after login.
+New screenshots saved to Desktop will be renamed automatically.
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7mscripts/uninstall-background.command[27m[36D[27ms[27mc[27mr[27mi[27mp[27mt[27ms[27m/[27mu[27mn[27mi[27mn[27ms[27mt[27ma[27ml[27ml[27m-[27mb[27ma[27mc[27mk[27mg[27mr[27mo[27mu[27mn[27md[27m.[27mc[27mo[27mm[27mm[27ma[27mn[27md[?2004l
+Removed LaunchAgent.
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hcclear[?2004l
+[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7msmartshot watch --dir ~/Desktop[27m[31D[27ms[27mm[27ma[27mr[27mt[27ms[27mh[27mo[27mt[27m [27mw[27ma[27mt[27mc[27mh[27m [27m-[27m-[27md[27mi[27mr[27m [27m~[27m/[27mD[27me[27ms[27mk[27mt[27mo[27mp[?2004l
+zsh: command not found: smartshot
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hccd scripts[1m/[0m[0m [?2004l
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air scripts % [K[?2004h[7msmartshot watch --dir ~/Desktop[27m[31D[27ms[27mm[27ma[27mr[27mt[27ms[27mh[27mo[27mt[27m [27mw[27ma[27mt[27mc[27mh[27m [27m-[27m-[27md[27mi[27mr[27m [27m~[27m/[27mD[27me[27ms[27mk[27mt[27mo[27mp[?2004l
+zsh: command not found: smartshot
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air scripts % [K[?2004hccd ..[?2004l
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7msmartshot watch --dir ~/Desktop[27m[31D[27ms[27mm[27ma[27mr[27mt[27ms[27mh[27mo[27mt[27m [27mw[27ma[27mt[27mc[27mh[27m [27m-[27m-[27md[27mi[27mr[27m [27m~[27m/[27mD[27me[27ms[27mk[27mt[27mo[27mp[?2004l
+zsh: command not found: smartshot
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7msmartshot watch --dir ~/Desktop[27m[31D[27ms[27mm[27ma[27mr[27mt[27ms[27mh[27mo[27mt[27m [27mw[27ma[27mt[27mc[27mh[27m [27m-[27m-[27md[27mi[27mr[27m [27m~[27m/[27mD[27me[27ms[27mk[27mt[27mo[27mp[?2004l
+zsh: command not found: smartshot
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hcclear[?2004l
+[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7msmartshot watch --dir ~/Desktop[27m[31D[27ms[27mm[27ma[27mr[27mt[27ms[27mh[27mo[27mt[27m [27mw[27ma[27mt[27mc[27mh[27m [27m-[27m-[27md[27mi[27mr[27m [27m~[27m/[27mD[27me[27ms[27mk[27mt[27mo[27mp[?2004l
+zsh: command not found: smartshot
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7m.venv/bin/smartshot watch --dir ~/Desktop[27m[41D[27m.[27mv[27me[27mn[27mv[27m/[27mb[27mi[27mn[27m/[27ms[27mm[27ma[27mr[27mt[27ms[27mh[27mo[27mt[27m [27mw[27ma[27mt[27mc[27mh[27m [27m-[27m-[27md[27mi[27mr[27m [27m~[27m/[27mD[27me[27ms[27mk[27mt[27mo[27mp[?2004l
+Watching: /Users/hemantmehta/Desktop
+^C[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hcclear[?2004l
+[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hvvercel[1m [0m[0m     v  ..venv/bin[1m/[0m[0m/activate[?2004l
+zsh: permission denied: .venv/bin/activate
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h.venv/bin/activate[18D                  [18D.venv/bin/activate[18Dclear             [13D.venv/bin/smartshot watch --dir ~/Desktop[41D[10P[31C          [10D[31Dclear                          [26Dsmartshot watch --dir ~/Desktop[?2004l
+zsh: command not found: smartshot
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7mscripts/install.sh[27m[18D[27ms[27mc[27mr[27mi[27mp[27mt[27ms[27m/[27mi[27mn[27ms[27mt[27ma[27ml[27ml[27m.[27ms[27mh[?2004l
+Installing SmartShot from: /Users/hemantmehta/Documents/Screenshot
+Using Python: Python 3.13.3
+Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (26.1.2)
+Obtaining file:///Users/hemantmehta/Documents/Screenshot
+  Installing build dependencies ... [?25l- done
+[?25h  Checking if build backend supports build_editable ... [?25ldone
+[?25h  Getting requirements to build editable ... [?25l- done
+[?25h  Preparing editable metadata (pyproject.toml) ... [?25l- done
+[?25hRequirement already satisfied: watchdog>=4.0.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (6.0.0)
+Requirement already satisfied: pyobjc-core>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Cocoa>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Quartz>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-Vision>=10.0 in ./.venv/lib/python3.13/site-packages (from smartshot==0.1.0) (12.1)
+Requirement already satisfied: pyobjc-framework-CoreML>=12.1 in ./.venv/lib/python3.13/site-packages (from pyobjc-framework-Vision>=10.0->smartshot==0.1.0) (12.1)
+Building wheels for collected packages: smartshot
+  Building editable for smartshot (pyproject.toml) ... [?25l- done
+[?25h  Created wheel for smartshot: filename=smartshot-0.1.0-0.editable-py3-none-any.whl size=5293 sha256=b54d96ec2e50b462ce8254e39b3fad8f6aae60498d58eed8100987c438fd9da3
+  Stored in directory: /private/var/folders/y8/8qdxmn0916l63p0jqz06zw8h0000gn/T/pip-ephem-wheel-cache-unoo578w/wheels/52/91/56/d1e53f6f1f35ddc4df9a80037709751aa9792d852a93e29f21
+Successfully built smartshot
+Installing collected packages: smartshot
+  Attempting uninstall: smartshot
+    Found existing installation: smartshot 0.1.0
+    Uninstalling smartshot-0.1.0:
+      Successfully uninstalled smartshot-0.1.0
+Successfully installed smartshot-0.1.0
+
+SmartShot is installed.
+
+Start the app:
+  scripts/start-app.command
+
+Or run from Terminal:
+  .venv/bin/smartshot app
+
+To make SmartShot work automatically after login:
+  scripts/install-background.command
+
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hscripts/install.sh[18Dsmartshot watch --dir ~/Desktop[?2004l
+zsh: command not found: smartshot
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004hcclear[?2004l
+[3J[H[2J[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[Jhemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h[7m. .venv/bin/activate[27m[20D[27m.[27m [27m.[27mv[27me[27mn[27mv[27m/[27mb[27mi[27mn[27m/[27ma[27mc[27mt[27mi[27mv[27ma[27mt[27me[?2004l
+[1m[7m%[27m[1m[0m                                                                                                            [0m[27m[24m[J(.venv) hemantmehta@Hemants-MacBook-Air Screenshot % [K[?2004h

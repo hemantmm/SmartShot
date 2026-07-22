@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.smartshot.watch</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <!-- Replace with the smartshot executable inside your venv, e.g. /Users/you/.../Screenshot/.venv/bin/smartshot -->
+      <string>/REPLACE/ME/PATH/TO/smartshot</string>
+      <string>watch</string>
+      <!-- Replace with your screenshot folder path -->
+      <string>--dir</string>
+      <string>/Users/you/Desktop</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/smartshot.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/smartshot.err.log</string>
+  </dict>
+</plist>

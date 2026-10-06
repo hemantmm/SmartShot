@@ -1,148 +1,80 @@
 # SmartShot
 
-SmartShot is a macOS app and command-line tool that renames screenshots based on
-what is visible inside them.
+SmartShot is a macOS Menu Bar app and command-line tool that automatically organizes your screenshots using OCR-powered smart filenames.
 
 macOS creates screenshots with names like:
-
 - `Screenshot 2026-05-12 at 11.56.50.png`
 
-SmartShot reads the screenshot text with OCR and renames the file to something
-searchable, like:
-
+SmartShot reads the screenshot text with Apple Vision OCR and renames the file to something searchable, like:
 - `Login Error - 2026-05-12 at 11.56.50.png`
 
-It uses Apple Vision OCR on macOS when installed with the `vision` extra.
+## How it works
 
-## Use Locally From GitHub
+1. You take a screenshot.
+2. SmartShot detects it in the background.
+3. Apple Vision OCR extracts text.
+4. Smart naming heuristics generate a new filename.
+5. The screenshot is automatically renamed.
 
-For now, SmartShot is meant to be used locally from a GitHub fork, clone, or
-downloaded ZIP. Clone the repo, install the local environment, then start the
-local app/watch process from the project folder. A Homebrew install path is
-planned and will be coming soon.
+## Features
 
-### Recommended Install Path
+- **Menu Bar Application**: Runs quietly in the background and shows you real-time activity and recently renamed files.
+- **Background Monitoring**: Automatically monitors your Desktop (or any configured folder).
+- **Smart Naming**: Prefers domains, filenames, and salient text from the image.
+- **CLI for Power Users**: Manage screenshots via terminal.
+- **Privacy-first**: All OCR and processing happens locally on your Mac.
 
-Use GitHub clone/local install today. Homebrew support is coming soon.
+## Download & Installation
 
-```bash
-git clone https://github.com/YOUR-GITHUB-USERNAME/smartshot.git
-cd smartshot
-scripts/install.sh
-scripts/start-app.command
-```
+*(Coming soon to GitHub Releases)*
 
-Then choose your screenshot folder in the app and click **Start Watching**.
-That starts SmartShot's local watcher for the selected screenshot folder.
+For now, you can build SmartShot yourself from source:
 
-To run automatically after login:
+### Building the macOS `.app`
 
-```bash
-scripts/install-background.command
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR-GITHUB-USERNAME/smartshot.git
+   cd smartshot
+   ```
 
-To remove background mode:
+2. Install dependencies:
+   ```bash
+   ./scripts/install.sh
+   . .venv/bin/activate
+   pip install -e ".[dev]"
+   ```
 
-```bash
-scripts/uninstall-background.command
-```
+3. Build the application bundle:
+   ```bash
+   ./scripts/build-app.sh
+   ```
 
-Fork the repository on GitHub first if you want your own copy. Then clone your
-fork:
+4. The built app will be in `dist/SmartShot.app`. You can double-click it or drag it to your `Applications` folder.
 
-```bash
-git clone https://github.com/YOUR-GITHUB-USERNAME/smartshot.git
-cd smartshot
-```
-
-Or download the ZIP from GitHub, unzip it, and open Terminal in the project
-folder.
+## Development
 
 Install the local app environment:
 
 ```bash
-scripts/install.sh
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -e ".[vision,dev]"
 ```
 
-Start the local desktop app:
+Run the Menu Bar app locally during development:
+
+```bash
+smartshot-menubar
+```
+
+Or start the legacy Tkinter desktop app:
 
 ```bash
 scripts/start-app.command
 ```
 
-The app lets users choose a screenshot folder, start or stop watching, rename a
-single file, backfill existing screenshots, and install the background watcher.
-
-What is already implemented in this project:
-
-- a Tkinter desktop app launched by `scripts/start-app.command`;
-- a CLI entrypoint launched by `.venv/bin/smartshot`;
-- local editable installation through `scripts/install.sh`;
-- Apple Vision OCR support when the `vision` extra installs successfully;
-- background mode through a macOS LaunchAgent.
-
-What is not done yet:
-
-- a double-clickable signed macOS `.app` bundle;
-- an app icon;
-- notarization/signing;
-- a DMG or GitHub Release artifact;
-- Homebrew distribution, coming soon;
-- PyPI distribution.
-
-## Does It Work After Install?
-
-Not automatically, and that is intentional.
-
-After installation, the user chooses one mode:
-
-- App mode: open SmartShot and click Start Watching. It renames screenshots while
-  the app is open.
-- Background mode: run `scripts/install-background.command` or click Install
-  Background in the app. Then SmartShot runs after login and renames screenshots
-  automatically.
-
-Background mode watches `~/Desktop` by default.
-
-To remove background mode:
-
-```bash
-scripts/uninstall-background.command
-```
-
-## Future Homebrew And Packaged App
-
-A Homebrew version is planned. For now, use the GitHub clone flow above and
-start SmartShot locally with:
-
-```bash
-scripts/start-app.command
-```
-
-After package publishing, a future install path may look like this:
-
-```bash
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
-pipx install "smartshot[vision]"
-```
-
-Then users would be able to open the desktop app with:
-
-```bash
-smartshot-app
-```
-
-You can also open the app through the CLI:
-
-```bash
-smartshot app
-```
-
-If the app says Python Tk support is missing, install a macOS Python build that
-includes `tkinter` and reinstall SmartShot. The CLI still works without Tk.
-
-## Command Line
+### Command Line Usage
 
 Watch your Desktop and rename new screenshots automatically:
 
@@ -159,15 +91,7 @@ smartshot rename "~/Desktop/Screenshot 2026-05-30 at 12.34.56.png"
 Rename existing screenshots in a folder:
 
 ```bash
-. .venv/bin/activate
-
 smartshot backfill --dir ~/Desktop
-```
-
-Remove it:
-
-```bash
-smartshot uninstall
 ```
 
 Useful options:
@@ -175,32 +99,10 @@ Useful options:
 - `--timestamp`: append the screenshot date/time to the filename.
 - `--dry-run`: show what would happen without renaming files.
 - `--force`: rename even when OCR is empty or unclear.
-- `--all-images`: rename any new `.png`, `.jpg`, or `.jpeg`, not only standard macOS screenshots.
-
-## Development
-
-```bash
-git clone <repo-url>
-cd smartshot
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -U pip
-python -m pip install -e ".[vision,dev]"
-pytest
-```
-
-Build distribution artifacts:
-
-```bash
-python -m build
-```
+- `--all-images`: rename any new `.png`, `.jpg`, or `.jpeg`.
 
 ## Notes
 
-- If OCR text contains a domain such as `superteam.fun`, SmartShot prefers the
-  domain label, such as `superteam`.
-- If OCR text contains a filename such as `naming.py`, SmartShot prefers the
-  filename stem, such as `naming`.
-- A manual LaunchAgent template is available at
-  `launchd/com.smartshot.watch.plist`, but most users should use
-  `smartshot install`.
+- If OCR text contains a domain such as `superteam.fun`, SmartShot prefers the domain label, such as `superteam`.
+- If OCR text contains a filename such as `naming.py`, SmartShot prefers the filename stem, such as `naming`.
+- A manual LaunchAgent template is available at `launchd/com.smartshot.watch.plist`, but most users should use `smartshot install`.

@@ -4,12 +4,13 @@ import threading
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Optional
 
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
 from .core import rename_image
+from .events import ProcessingEvent
 from .utils import is_probably_macos_screenshot
 
 
@@ -24,6 +25,7 @@ class WatchOptions:
 
 
 WatchLogCallback = Callable[[str], None]
+WatchEventCallback = Callable[[ProcessingEvent], None]
 
 
 class _ScreenshotHandler(FileSystemEventHandler):
@@ -32,9 +34,11 @@ class _ScreenshotHandler(FileSystemEventHandler):
         opts: WatchOptions,
         *,
         log_callback: WatchLogCallback | None = None,
+        event_callback: WatchEventCallback | None = None,
     ) -> None:
         self._opts = opts
         self._log_callback = log_callback
+        self._event_callback = event_callback
         self._lock = threading.Lock()
         self._recent: dict[Path, float] = {}
 
@@ -63,12 +67,16 @@ class _ScreenshotHandler(FileSystemEventHandler):
         if not self._opts.all_images and not is_probably_macos_screenshot(path):
             return
 
+        if self._event_callback:
+            self._event_callback(ProcessingEvent("detected", path, None, "Screenshot detected"))
+
         try:
             result = rename_image(
                 path,
                 dry_run=self._opts.dry_run,
                 force=self._opts.force,
                 include_timestamp=self._opts.include_timestamp,
+                event_callback=self._event_callback,
             )
             if result:
                 prefix = "DRY-RUN" if self._opts.dry_run else "RENAMED"
@@ -79,6 +87,8 @@ class _ScreenshotHandler(FileSystemEventHandler):
         except Exception as e:
             # Best-effort background behavior; errors should not crash the watcher.
             self._log(f"ERROR: {path.name}: {e}")
+            if self._event_callback:
+                self._event_callback(ProcessingEvent("error", path, None, f"Failed to process screenshot: {e}"))
             return
 
     def _log(self, message: str) -> None:
@@ -96,10 +106,12 @@ class WatchSession:
         opts: WatchOptions,
         *,
         log_callback: WatchLogCallback | None = None,
+        event_callback: WatchEventCallback | None = None,
     ) -> None:
         directory = Path(opts.directory).expanduser().resolve()
         self.opts = WatchOptions(**{**opts.__dict__, "directory": directory})
         self._log_callback = log_callback
+        self._event_callback = event_callback
         self._observer: Observer | None = None
 
     @property
@@ -114,6 +126,7 @@ class WatchSession:
         handler = _ScreenshotHandler(
             self.opts,
             log_callback=self._log_callback,
+            event_callback=self._event_callback,
         )
         observer = Observer()
         observer.schedule(handler, str(self.opts.directory), recursive=self.opts.recursive)

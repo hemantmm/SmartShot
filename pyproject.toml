@@ -31,6 +31,7 @@ classifiers = [
 
 dependencies = [
   "watchdog>=4.0.0",
+  "rumps>=0.4.0",
 ]
 
 [project.optional-dependencies]
@@ -44,11 +45,13 @@ vision = [
 dev = [
   "pytest>=8.0.0",
   "build>=1.0.0",
+  "py2app>=0.28.0",
 ]
 
 [project.scripts]
 smartshot = "smartshot.cli:main"
 smartshot-app = "smartshot.app:main"
+smartshot-menubar = "smartshot.menubar:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
